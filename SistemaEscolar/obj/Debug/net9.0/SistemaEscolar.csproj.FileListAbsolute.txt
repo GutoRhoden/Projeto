@@ -1,0 +1,8 @@
+C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\SistemaEscolar.csproj.AssemblyReference.cache
+C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\SistemaEscolar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\SistemaEscolar.AssemblyInfoInputs.cache
+C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\SistemaEscolar.AssemblyInfo.cs
+C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\SistemaEscolar.csproj.CoreCompileInputs.cache
+C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\SistemaEscolar.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\SistemaEscolar.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\SistemaEscolar.sourcelink.json
