@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Escolar</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body> 
+
+    <nav>
+        <ul>
+            <li><a href="cadastroAlunos.html">Cadastro de Alunos</a></li>
+            <li><a href="cadastroTurmas.html">Cadastro de Turmas</a></li>
+            <li><a href="listarTurmas.html">Ver Turmas</a></li>
+        </ul>
+    </nav>
+
+    <section id="cadastroTurmas">
+        <h2>Cadastro de Turmas</h2>
+        <div class="form-container">
+            <form id="formCadastroTurmas">
+                <div class="input-group">
+                    <label for="codigoTurma">Código da Turma</label>
+                    <input type="text" id="codigoTurma" required>
+                </div>
+                <div class="input-group">
+                    <label for="etapaEnsino">Etapa de Ensino</label>
+                    <select id="etapaEnsino" required>
+                        <option value="infantil">Infantil</option>
+                        <option value="fundamental1">Fundamental Anos Iniciais</option>
+                        <option value="fundamental2">Fundamental Anos Finais</option>
+                        <option value="medio">Médio</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="anoTurma">Ano</label>
+                    <input type="number" id="anoTurma" min="2000" max="2100" required>
+                </div>
+                <div class="input-group">
+                    <label for="limiteVagas">Limite de Vagas</label>
+                    <input type="number" id="limiteVagas" min="1" required>
+                </div>
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+            <p id="mensagemTurma"></p>
+
+            <!-- Link para outra página HTML -->
+            <a href="listarTurmas.html" class="btn">Ver Turmas Cadastradas</a>
+        </div>
+    </section>
+
+</body>
+</html>

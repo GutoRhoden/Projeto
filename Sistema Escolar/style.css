@@ -1,0 +1,107 @@
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+nav {
+  background-color: #4f51b5;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight:bolder;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Seção de Cadastro de Alunos */
+#cadastroAlunos {
+  margin: 40px auto;
+  max-width: 800px;
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #4f51b5;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.input-group input:focus {
+  border-color: #4f51b5;
+  outline: none;
+}
+
+.btn {
+  background-color: #4f51b5;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4f51b5;
+}
+
+#mensagem {
+  text-align: center;
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 15px;
+}
