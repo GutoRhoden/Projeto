@@ -1,18 +1,24 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
-using SistemaEscolar.Data;  // Importa o namespace onde o DataContext está
+using SistemaEscolar.Data; // Certifique-se de que o namespace do seu DataContext está correto!
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configura o DbContext com a string de conexão
-builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Carregar configurações do appsettings.json
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
-builder.Services.AddControllers();
+// Obter a string de conexão
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Adicionar o DbContext ao contêiner de serviços
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
-app.UseAuthorization();
-
-app.MapControllers();
+app.MapGet("/", () => "Sistema Escolar rodando!");
 
 app.Run();
