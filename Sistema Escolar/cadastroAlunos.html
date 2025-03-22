@@ -43,21 +43,29 @@
     </section>
 
     <script>
-        document.getElementById("formCadastroAlunos").addEventListener("submit", async function(event) {
-            event.preventDefault();
-            
-            const nome = document.getElementById("nomeAluno").value;
-            const dataNascimento = document.getElementById("dataNascimento").value;
-            const cpf = document.getElementById("cpfAluno").value;
-            
-            const response = await fetch("http://localhost:5000/api/alunos", {
+        document.getElementById("formCadastro").addEventListener("submit", async function(event) {
+            event.preventDefault(); // Evitar o envio padrão do formulário
+
+            const aluno = {
+                nome: document.getElementById("nome").value,
+                idade: document.getElementById("idade").value,
+                cpf: document.getElementById("cpf").value
+            };
+
+            // Chamar a API para cadastrar o aluno
+            const response = await fetch("http://localhost:5095", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ nome, dataNascimento, cpf })
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(aluno)
             });
-            
-            const result = await response.json();
-            document.getElementById("mensagem").textContent = result.message || "Aluno cadastrado com sucesso!";
+
+            if (response.ok) {
+                alert("Aluno cadastrado com sucesso!");
+            } else {
+                alert("Erro ao cadastrar aluno!");
+            }
         });
     </script>
 
