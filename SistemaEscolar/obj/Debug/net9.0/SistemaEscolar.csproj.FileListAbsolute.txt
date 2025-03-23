@@ -162,3 +162,6 @@ C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\refint\SistemaEscolar.dll
 C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\SistemaEscolar.pdb
 C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\SistemaEscolar.genruntimeconfig.cache
 C:\Users\augus\WEB\SistemaEscolar\obj\Debug\net9.0\ref\SistemaEscolar.dll
+C:\Users\augus\WEB\SistemaEscolar\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\augus\WEB\SistemaEscolar\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\augus\WEB\SistemaEscolar\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

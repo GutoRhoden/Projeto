@@ -17,8 +17,22 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(connectionString));
 
+// Adicionar o Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
+// Habilitar o Swagger para visualizar a documentação da API
+app.UseSwagger();
+app.UseSwaggerUI();
+
+// Use os Controllers
+app.MapControllers();
+
 app.MapGet("/", () => "Sistema Escolar rodando!");
+
 
 app.Run();
