@@ -23,7 +23,7 @@
     <section id="cadastroAlunos">
         <h2>Cadastro de Alunos</h2>
         <div class="form-container">
-            <form id="formCadastroAlunos">
+            <form action="http://localhost:5095" method="POST">
                 <div class="input-group">
                     <label for="nomeAluno">Nome</label>
                     <input type="text" id="nomeAluno" required>
@@ -43,29 +43,34 @@
     </section>
 
     <script>
-        document.getElementById("formCadastro").addEventListener("submit", async function(event) {
-            event.preventDefault(); // Evitar o envio padrão do formulário
+        document.getElementById('formCadastro').addEventListener('submit', function (e) {
+            e.preventDefault(); // Evita o envio do formulário padrão
 
             const aluno = {
-                nome: document.getElementById("nome").value,
-                idade: document.getElementById("idade").value,
-                cpf: document.getElementById("cpf").value
+                nome: document.getElementById('nome').value,
+                cpf: document.getElementById('cpf').value,
+                dataNascimento: document.getElementById('dataNascimento').value
             };
 
-            // Chamar a API para cadastrar o aluno
-            const response = await fetch("http://localhost:5095", {
-                method: "POST",
+            fetch('http://localhost:5095/api/alunos', {
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json"
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(aluno)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === "Aluno cadastrado com sucesso!") {
+                    alert('Cadastro realizado com sucesso!');
+                } else {
+                    alert('Erro no cadastro');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao tentar se conectar com o servidor');
             });
-
-            if (response.ok) {
-                alert("Aluno cadastrado com sucesso!");
-            } else {
-                alert("Erro ao cadastrar aluno!");
-            }
         });
     </script>
 

@@ -41,7 +41,7 @@ public class Aluno
     [Required]
     public string Nome { get; set; }
     [Required]
-    public string DataNascimento { get; set; }
+    public DateTime DataNascimento { get; set; }
     [Required]
     public string CPF { get; set; }
 }
