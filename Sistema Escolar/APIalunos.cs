@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer("Server=SEU_SERVIDOR;Database=SistemaEscolar;Trusted_Connection=True;"));
+    options.UseSqlServer("Server=localhost;Database=Banco Alunos;Trusted_Connection=True;"));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
@@ -21,7 +21,10 @@ app.MapPost("/api/alunos", async ([FromBody] Aluno aluno, AppDbContext db) =>
 
     db.Alunos.Add(aluno);
     await db.SaveChangesAsync();
-    return Results.Ok(new { message = "Aluno cadastrado com sucesso!" });
+
+    // Alterar a forma de retorno para garantir que a mensagem apareça
+    var response = new { message = "Aluno cadastrado com sucesso!" };
+    return Results.Ok(response);
 });
 
 app.Run();
